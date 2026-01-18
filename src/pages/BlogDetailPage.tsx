@@ -23,12 +23,11 @@ export default function BlogDetailPage() {
   const { isBookmarked, addBookmark, removeBookmark, addToHistory } = useApp();
   const [blog, setBlog] = useState<Blog | null>(null);
   const [relatedBlogs, setRelatedBlogs] = useState<Blog[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
     async function fetchBlog() {
       if (!slug) return;
-      setLoading(true);
       try {
         const blogData = await blogApi.getBySlug(slug);
         setBlog(blogData);
@@ -39,7 +38,7 @@ export default function BlogDetailPage() {
           setRelatedBlogs(related);
         }
       } finally {
-        setLoading(false);
+        setIsInitialLoad(false);
       }
     }
     fetchBlog();
@@ -70,7 +69,7 @@ export default function BlogDetailPage() {
     }
   };
 
-  if (loading) {
+  if (isInitialLoad && !blog) {
     return (
       <Layout>
         <div className="container mx-auto px-4 py-8">
