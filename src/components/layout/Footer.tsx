@@ -31,7 +31,8 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
-                <Code2 className="h-5 w-5 text-primary" />
+                {/* <Code2 className="h-5 w-5 text-primary" /> */}
+                <img src='/code.png' alt="InterviewPrep Logo" className="h-9 w-9 text-primary object-cover" />
               </div>
               <span className="font-bold text-lg">
                 Interview<span className="text-primary">Prep</span>

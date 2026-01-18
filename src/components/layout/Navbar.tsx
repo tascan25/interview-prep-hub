@@ -28,7 +28,9 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-              <Code2 className="h-5 w-5 text-primary" />
+              {/* <Code2 className="h-5 w-5 text-primary" /> */}
+              <img src="/code.png" alt="InterviewPrep Logo" className="h-9 w-9 text-primary object-cover" />
+
             </div>
             <span className="font-bold text-lg hidden sm:block">
               Interview<span className="text-primary">Prep</span>

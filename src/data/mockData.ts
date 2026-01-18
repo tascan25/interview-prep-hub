@@ -1,3 +1,5 @@
+import googlelogo from '../assets/companylogo/google.png';
+
 export interface Blog {
   id: string;
   slug: string;
